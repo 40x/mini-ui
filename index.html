@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>WTF</title>
+    <script src='./jquery.min.js'></script>
+</head>
+<body>
+
+    <div id='result'></div>
+
+    <script>
+        $.get('/api/at/' + (new Date()).toISOString() )
+                .success(function (resp) {
+                    $( '#result' ).html( resp );
+                });
+    </script>
+</body>
+</html>
