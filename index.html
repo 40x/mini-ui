@@ -10,10 +10,9 @@
     <div id='result'></div>
 
     <script>
-        $.get('/api/at/' + (new Date()).toISOString() )
-                .success(function (resp) {
-                    $( '#result' ).html( resp );
-                });
+        $.get('/api/at/' + (new Date()).toISOString(), function (resp) {
+            $( '#result' ).html( resp );
+        });
     </script>
 </body>
 </html>
