@@ -10,7 +10,7 @@ docker build -t $NAME:$IMAGE_VERSION .
 
 # Create Deployment
 
-kubectl apply -f ./ui.deployment.yml -e COMMIT_SHA=IMAGE_VERSION
+kubectl apply -f ./ui.deployment.yml
 
 # Create Service
 
