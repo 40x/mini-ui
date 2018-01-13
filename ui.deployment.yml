@@ -12,4 +12,4 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: frontend:2215426
+        image: frontend:9096b2b
