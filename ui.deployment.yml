@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: frontend-deployment
+  name: frontend
   labels:
     app: frontend
 spec:
@@ -9,6 +9,7 @@ spec:
   selector:
     matchLabels:
       app: frontend
+      tier: frontend
   template:
     metadata:
       labels:
@@ -16,4 +17,4 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: frontend:ed5fcf1
+        image: frontend:2c69a41
