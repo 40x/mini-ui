@@ -10,8 +10,8 @@ docker build -t $NAME:$IMAGE_VERSION .
 
 # Create Deployment
 
-kubectl run $NAME --image=$NAME:$IMAGE_VERSION --port=80 --image-pull-policy=IfNotPresent
+kubectl create -f ./ui.deployment.yml
 
 # Create Service
 
-kubectl expose deployment $NAME --type=LoadBalancer
+kubectl create -f ./ui.service.yml
