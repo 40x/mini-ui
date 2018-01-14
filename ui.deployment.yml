@@ -3,16 +3,17 @@ kind: Deployment
 metadata:
   name: frontend
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
         app: frontend
         tier: frontend
+        track: stable
     spec:
       containers:
       - name: frontend
-        image: frontend:29e6eb7
+        image: frontend:c16c15d
         lifecycle:
           preStop:
             exec:
