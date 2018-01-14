@@ -12,4 +12,8 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: frontend:9096b2b
+        image: frontend:041621b
+        lifecycle:
+          preStop:
+            exec:
+              command: ["/usr/sbin/nginx","-s","quit"]
