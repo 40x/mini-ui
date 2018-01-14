@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: frontend:c16c15d
+        image: frontend:ce4bdda
         lifecycle:
           preStop:
             exec:
