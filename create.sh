@@ -8,10 +8,6 @@ IMAGE_VERSION="$(git rev-parse --short HEAD)"
 
 docker build -t $NAME:$IMAGE_VERSION .
 
-# Create Deployment
+# Create Deployment and Service
 
-kubectl apply -f ./ui.deployment.yml
-
-# Create Service
-
-kubectl apply -f ./ui.service.yml
+kubectl apply -f ./ui.k8s.yml

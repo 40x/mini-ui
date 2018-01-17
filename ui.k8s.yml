@@ -13,8 +13,22 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: frontend:ce4bdda
+        image: frontend:5bfc77e
         lifecycle:
           preStop:
             exec:
               command: ["/usr/sbin/nginx","-s","quit"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+spec:
+  selector:
+    app: frontend
+    tier: frontend
+  ports:
+  - protocol: "TCP"
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
