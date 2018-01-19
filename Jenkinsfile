@@ -1,11 +1,7 @@
 node {
-    stage "switch to apps"
+    stage "Code checkout"
 
-        sh "kubectl config use-context minikube"
-
-    stage "LOG ====="
-
-            sh "kubectl config view"
+        checkout scm
 
     stage "Build and push"
 
@@ -14,13 +10,5 @@ node {
     stage "Deploy"
 
         sh "kubectl apply -f ./ui.k8s.yml"
-
-    stage "switch back to infra"
-
-        sh "kubectl config use-context infra"
-
-    stage "LOG ====="
-
-        sh "kubectl config view"
 
 }
