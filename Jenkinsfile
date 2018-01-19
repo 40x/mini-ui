@@ -9,6 +9,6 @@ node {
 
     stage "Deploy"
 
-        sh "kubectl apply -f ./ui.k8s.yml"
+        sh "kubectl apply -f ui.k8s.yml"
 
 }
