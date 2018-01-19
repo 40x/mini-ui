@@ -7,6 +7,10 @@ node {
 
         sh "sh create.sh"
 
+    stage "Logs  ==="
+
+        sh "kubectl version"
+
     stage "Deploy"
 
         sh "kubectl apply -f ui.k8s.yml"
