@@ -1,18 +1,14 @@
 node {
-    stage "Code checkout"
-
-        checkout scm
-
-    stage "Build and push"
-
-        sh "sh create.sh"
-
-    stage "Logs  ==="
-
-        sh "kubectl version"
-
-    stage "Deploy"
-
-        sh "kubectl apply -f ui.k8s.yml"
-
+  stage('List pods') {
+    withKubeConfig(
+        [
+            credentialsId: JENKINS_CREDENTIALS_ID,
+            caCertificate: DEV_CA_CERT,
+            serverUrl: DEV_SERVER_URL
+        ]
+    )
+    {
+      sh 'kubectl get pods'
+    }
+  }
 }
